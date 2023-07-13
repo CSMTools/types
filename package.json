@@ -1,0 +1,28 @@
+{
+    "name": "@csmtools/types",
+    "version": "1.0.0",
+    "description": "Types used by both front and backend of csm.tools",
+    "license": "GPL-3.0",
+    "main": "dist/cjs/index.js",
+    "module": "dist/mjs/index.js",
+    "exports": {
+        ".": {
+            "import": "./dist/mjs/index.js",
+            "require": "./dist/cjs/index.js"
+        }
+    },
+    "scripts": {
+        "build": "rimraf dist/* && tsc -p tsconfig.json && tsc -p build/tsconfig-cjs.json && node build/scripts/fixup"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "keywords": [],
+    "author": "Albin Hedwall <albin.hedwall@gmail.com>",
+    "devDependencies": {
+        "@types/globaloffensive": "^2.3.1",
+        "rimraf": "^5.0.1",
+        "tsc": "^2.0.4",
+        "typescript": "^5.1.6"
+    }
+}
