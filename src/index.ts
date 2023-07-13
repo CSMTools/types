@@ -19,9 +19,7 @@ export type ItemSet = {
 
 export type Sticker = GOSticker & {
     tint_id: number | null
-}
-
-export type StickerWithAdditionalData = Sticker & {
+} & {
     codename?: string;
     material?: string;
     name?: string;
@@ -47,8 +45,8 @@ export type ItemData = {
     a: string,
     d: string,
     m: string,
-    stickers: StickerWithAdditionalData[],
-    additional: {
+    stickers: Sticker[],
+    additional?: {
         imageurl: string;
         floatData: {
             min: number,
