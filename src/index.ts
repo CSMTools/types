@@ -29,7 +29,7 @@ export type StickerWithAdditionalData = Sticker & {
     rarityname?: string;
 }
 
-type BasicItemData = {
+export type ItemData = {
     delay?: number,
     itemid: string,
     defindex: number,
@@ -47,10 +47,6 @@ type BasicItemData = {
     a: string,
     d: string,
     m: string,
-    stickers: Sticker[]
-}
-
-type ItemDataWithAdditionalData = BasicItemData & {
     stickers: StickerWithAdditionalData[],
     additional: {
         imageurl: string;
@@ -67,8 +63,6 @@ type ItemDataWithAdditionalData = BasicItemData & {
         full_item_name: string;
     }
 }
-
-export type ItemData = BasicItemData | ItemDataWithAdditionalData
 
 export type StaticSticker = {
     name: string;
