@@ -20,6 +20,7 @@ export type ItemSet = {
 export type Sticker = GOSticker & {
     tint_id: number | null
 } & {
+} & {
     codename?: string;
     material?: string;
     name?: string;
