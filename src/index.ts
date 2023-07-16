@@ -20,7 +20,6 @@ export type ItemSet = {
 export type Sticker = GOSticker & {
     tint_id: number | null
 } & {
-} & {
     codename?: string;
     material?: string;
     name?: string;
@@ -62,6 +61,14 @@ export type ItemData = {
         full_item_name: string;
     }
 }
+
+export type API_RESPONSE_ERROR = string;
+export type API_RESPONSE<T> = {
+    data: T | null,
+    errors: API_RESPONSE_ERROR[]
+}
+
+export type InspectResponse = API_RESPONSE<ItemData>;
 
 export type StaticSticker = {
     name: string;
