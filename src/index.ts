@@ -68,7 +68,23 @@ export type API_RESPONSE<T> = {
     errors: API_RESPONSE_ERROR[]
 }
 
+export type IndexResponse = API_RESPONSE<string>;
+
 export type InspectResponse = API_RESPONSE<ItemData>;
+export type BulkInspectResponse = API_RESPONSE<(ItemData | undefined)[]>;
+
+export type StaticStickerResponse = API_RESPONSE<StaticSticker>;
+export type StaticWeaponResponse = API_RESPONSE<StaticWeapon>;
+
+export type GetFileResponse = API_RESPONSE<{
+    content: string
+}>;
+export type GetFileListResponse = API_RESPONSE<{
+    list: string[]
+}>;
+export type SaveFileResponse = API_RESPONSE<{
+    fileId: string
+}>;
 
 export type StaticSticker = {
     name: string;
