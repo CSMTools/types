@@ -28,29 +28,29 @@ export type Sticker = GOSticker & {
 }
 
 export type ItemData = {
-    delay?: number,
-    itemid: string,
-    defindex: number,
-    paintindex: number,
-    rarity: number,
-    quality: number,
-    killeaterscoretype: number | null,
-    killeatervalue: number,
-    customname: string | null,
-    paintseed: number | null,
-    paintwear: number,
-    origin: number,
-    fadePercentage: number | null,
-    s: string,
-    a: string,
-    d: string,
-    m: string,
-    stickers: Sticker[],
+    delay?: number;
+    itemid: string;
+    defindex: number;
+    paintindex: number;
+    rarity: number;
+    quality: number;
+    killeaterscoretype: number | null;
+    killeatervalue: number;
+    customname: string | null;
+    paintseed: number | null;
+    paintwear: number;
+    origin: number;
+    fadePercentage: number | null;
+    s: string;
+    a: string;
+    d: string;
+    m: string;
+    stickers: Sticker[];
     additional?: {
         imageurl: string;
         floatData: {
-            min: number,
-            max: number
+            min: number;
+            max: number;
         };
         weapon_type: string;
         item_name: string;
@@ -60,6 +60,22 @@ export type ItemData = {
         wear_name: string;
         full_item_name: string;
     }
+}
+
+export type BotsStatus = {
+    queue: {
+        total: number;
+        average: number; // ms
+        successRate: number; // % between 0 and 1
+        peak: number;
+    }
+    bots: [
+        {
+            name: string;
+            available: boolean;
+            busy: boolean;
+        }
+    ]
 }
 
 export type API_RESPONSE_ERROR = string;
@@ -86,21 +102,7 @@ export type SaveFileResponse = API_RESPONSE<{
     fileId: string
 }>;
 
-export type BotsStatusResponse = API_RESPONSE<{
-    queue: {
-        total: number,
-        average: number, // ms
-        successRate: number // % between 0 and 1
-        peak: number
-    }
-    bots: [
-        {
-            name: string,
-            available: boolean,
-            busy: boolean
-        }
-    ]
-}>
+export type BotsStatusResponse = API_RESPONSE<BotsStatus>;
 
 export type StaticSticker = {
     name: string;
