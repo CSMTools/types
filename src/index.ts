@@ -86,6 +86,22 @@ export type SaveFileResponse = API_RESPONSE<{
     fileId: string
 }>;
 
+export type BotsStatusResponse = API_RESPONSE<{
+    queue: {
+        total: number,
+        average: number, // ms
+        successRate: number // % between 0 and 1
+        peak: number
+    }
+    bots: [
+        {
+            name: string,
+            available: boolean,
+            busy: boolean
+        }
+    ]
+}>
+
 export type StaticSticker = {
     name: string;
     description: string;
