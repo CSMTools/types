@@ -69,13 +69,11 @@ export type BotsStatus = {
         successRate: number; // % between 0 and 1
         peak: number;
     }
-    bots: [
-        {
-            name: string;
-            available: boolean;
-            busy: boolean;
-        }
-    ]
+    bots: {
+        name: string;
+        available: boolean;
+        busy: boolean;
+    }[]
 }
 
 export type API_RESPONSE_ERROR = string;
